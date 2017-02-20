@@ -18,11 +18,11 @@ class Api::V2::PatientsController < ApplicationController
   end
 
   def show
-    @patient = Employee.find_by(id:params[:id])
+    @patient = Patient.find_by(id:params[:id])
   end
 
   def update
-    @patient = Employee.find_by(id:params[:id])
+    @patient = Patient.find_by(id:params[:id])
   @patient.update(
       first_name: params[:first_name],
       last_name: params[:last_name],
@@ -34,9 +34,9 @@ class Api::V2::PatientsController < ApplicationController
   end
 
   def destroy
-   @patient = Employee.find_by(id:params[:id])
+   @patient = Patient.find_by(id:params[:id])
    @patient.destroy
 
-    render json: {message: "Patient Recovered!!!!!"}
+    render json: {message: "Patient Recovered"}
   end
 end
